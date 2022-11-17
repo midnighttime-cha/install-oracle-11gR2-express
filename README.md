@@ -369,6 +369,7 @@ sudo reboot
 
 ### ติดตั้ง DBMS
 ```sh
+sudo alien --scripts -d oracle-xe-11.2.0-1.0.x86_64.rpm
 sudo dpkg --install oracle-xe_11.2.0-2_amd64.deb
 ```
 
