@@ -4,23 +4,15 @@
 - CPU: 1 CPU
 - RAM: 4 GB
 
-## ทำ Swapfile
-```sh
-sudo swapoff -a
-```
-
 ## สร้างไฟล์ Swap ขนาด 8Gb:
 ```sh
+sudo swapoff -a
 sudo dd if=/dev/zero of=/swapfile bs=1G count=8
 ```
 
 ## เมื่อสร้างไฟล๋เรียบร้อย ทำการใช้งานไฟล์ Swap
 ```sh
 sudo mkswap /swapfile
-```
-
-## เปิดใช้งาน Swap File
-```sh
 sudo swapon /swapfile
 ```
 
@@ -179,91 +171,16 @@ fi
 
 ### ติดตั้ง Package ต่อไปนี้
 ```sh
-apt-get update
-
-apt-get install alien -y
-
-apt-get install autoconf -y
-
-apt-get install automake -y
-
-apt-get install autotools-dev -y
-
-apt-get install binutils -y
-
-apt-get install bzip2 -y
-
-apt-get install doxygen -y
-
-apt-get install elfutils -y
-
-apt-get install expat -y
-
-apt-get install gawk -y
-
-apt-get install gcc -y
-
-apt-get install gcc-multilib -y
-
-apt-get install g++-multilib -y
-
-apt-get install libelf-dev -y
-
-apt-get install libltdl-dev -y
-
-apt-get install libodbcinstq4-1 libodbcinstq4-1:i386 -y
-
-apt-get install libpth-dev -y
-
-apt-get install libpthread-stubs0-dev -y
-
-apt-get install libstdc++5 -y
-
-apt-get install make -y
-
-apt-get install openssh-server -y
-
-apt-get install rlwrap -y
-
-apt-get install rpm -y
-
-apt-get install sysstat -y
-
-apt-get install unixodbc -y
-
-apt-get install unixodbc-dev -y
-
-apt-get install unzip -y
-
-apt-get install x11-utils -y
-
-apt-get install zlibc -y
-
-apt-get install libaio1 -y
-
-apt-get install libaio-dev -y
-
-apt install lib32z1 -y
-
-apt install libxm4 -y
-
-apt install libuil4 -y
-
-apt install libmrm4 -y
-
-apt install libmotif-common -y
-
-apt install lib32ncurses5 -y
-
-apt install lib32tinfo5 -y
+sudo apt-get update && sudo apt-get install -y libaio1 libaio-dev expat sysstat \
+libelf-dev elfutils libstdc++5 ksh alien \
+gcc gawk binutils gawk x11-utils rpm alien openssh-server \
+lib32z1 libxm4 libuil4 libmrm4 libmotif-common lib32ncurses5 lib32tinfo5
 ```
 
 ### ทำการดาวน์โหลดและติดตั้ง
 - [Download](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) ไฟล์ติดตั้ง Oracle Database Express Edition.
 - unzip ไฟล์
 ```sh
-mv oracle-xe-11.2.0-1.0.x86_64.rpm.zip /home/oracle/
-cd /home/oracle/
 unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 ```
 
@@ -369,7 +286,6 @@ sudo reboot
 
 ### ติดตั้ง DBMS
 ```sh
-sudo alien --scripts -d oracle-xe-11.2.0-1.0.x86_64.rpm
 sudo dpkg --install oracle-xe_11.2.0-2_amd64.deb
 ```
 
