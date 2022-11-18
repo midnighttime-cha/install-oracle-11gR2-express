@@ -154,10 +154,6 @@ $ session    required   pam_limits.so
 session    required   pam_limits.so
 ```
 
-```sh
-cat /etc/pam.d/login | grep pam_limits.so
-```
-
 ### แก้ไขไฟล์ /etc/profile
 ```sh
 if [ $USER = "oracle" ]; then
