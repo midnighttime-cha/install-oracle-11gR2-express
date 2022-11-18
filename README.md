@@ -176,9 +176,9 @@ fi
 ### ติดตั้ง Package ต่อไปนี้
 ```sh
 sudo apt-get update && sudo apt-get install -y libaio1 libaio-dev expat sysstat \
-libelf-dev elfutils libstdc++5 ksh alien \
-gcc gawk binutils gawk x11-utils rpm alien openssh-server \
-lib32z1 libxm4 libuil4 libmrm4 libmotif-common lib32ncurses5 lib32tinfo5
+unixodbc unixodbc-dev libelf-dev elfutils lsb libstdc++5 lib32z1 ksh alien \
+gcc gawk binutils gawk x11-utils rpm alien \
+lib32z1 libxm4 libuil4 libmrm4 libmotif-common lib32ncurses5-dev lib32tinfo5
 ```
 
 ### ทำการดาวน์โหลดและติดตั้ง
