@@ -185,6 +185,10 @@ lib32z1 libxm4 libuil4 libmrm4 libmotif-common lib32ncurses5-dev
 - [Download](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html) ไฟล์ติดตั้ง Oracle Database Express Edition.
 - unzip ไฟล์
 ```sh
+mv oracle-xe-11.2.0-1.0.x86_64.rpm.zip /home/oracle/
+
+cd /home/oracle/
+
 unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 ```
 
