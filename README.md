@@ -141,7 +141,15 @@ oracle           hard    nofile  65536
 oracle           soft    stack   10240
 ```
 
-### ทำการแก้ไข `/etc/pam.d/login`
+### ทำการเช็ค `/etc/pam.d/login`
+
+```sh
+cat /etc/pam.d/login | grep pam_limits.so
+
+#Output
+$ session    required   pam_limits.so
+```
+ถ้าไม่มีผลตาม `Output` ให้ทำการเติมคำสั่งต่อไปนี้ไป
 ```sh
 session    required   pam_limits.so
 ```
