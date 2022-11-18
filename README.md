@@ -8,11 +8,11 @@
 ```sh
 sudo swapoff -a
 sudo dd if=/dev/zero of=/swapfile bs=1G count=8
-```
 
-## เมื่อสร้างไฟล๋เรียบร้อย ทำการใช้งานไฟล์ Swap
-```sh
+sudo chmod 600 /swapfile
+
 sudo mkswap /swapfile
+
 sudo swapon /swapfile
 ```
 
