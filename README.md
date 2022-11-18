@@ -338,19 +338,17 @@ sudo usermod -a -G dba YOURUSERNAME
 sudo service oracle-xe start
 ```
 
+### สร้าง DATAFILE
+```sh
+sudo mkdir -p /home/oracle/oradata/DATAFILE
+
+chown -R oracle:oinstall /home/oracle/oradata/DATAFILE
+```
+
 ### Using SQLPlus
 ```sh
 sqlplus sys as sysdba
 ```
 
 ### User DBA on SQLPlus
-```sh
-# Create User
-create user USERNAME identified by PASSWORD;
-
-# Alter reset log
-alter database open resetlogs;
-
-# Grant role
-grant connect, resource to USERNAME;
-```
+[เรียนรู้คำสั่ง Oracle เพิ่มเติม](https://github.com/midnighttime-cha/trick-tip-oracle)
