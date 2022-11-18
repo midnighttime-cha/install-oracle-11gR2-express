@@ -294,6 +294,7 @@ sudo reboot
 
 ### ติดตั้ง DBMS
 ```sh
+cd /home/oracle/Disk1
 sudo dpkg --install oracle-xe_11.2.0-2_amd64.deb
 ```
 
