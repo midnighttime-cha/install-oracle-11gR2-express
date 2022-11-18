@@ -342,7 +342,7 @@ sudo service oracle-xe start
 ```sh
 sudo mkdir -p /home/oracle/oradata/DATAFILE
 
-chown -R oracle:oinstall /home/oracle/oradata/DATAFILE
+sudo chown -R oracle:oinstall /home/oracle/oradata/DATAFILE
 ```
 
 ### Using SQLPlus
