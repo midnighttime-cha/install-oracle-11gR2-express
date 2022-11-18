@@ -177,7 +177,7 @@ fi
 ```sh
 sudo apt-get update && sudo apt-get install -y libaio1 libaio-dev expat sysstat \
 unixodbc unixodbc-dev libelf-dev elfutils lsb libstdc++5 lib32z1 ksh alien \
-gcc gawk binutils gawk x11-utils rpm alien \
+gcc gawk binutils gawk x11-utils rpm alien unzip \
 lib32z1 libxm4 libuil4 libmrm4 libmotif-common lib32ncurses5-dev
 ```
 
