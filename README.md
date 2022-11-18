@@ -192,7 +192,7 @@ cd /home/oracle/
 unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip
 ```
 
-### ติดตั้ง
+### ทำการ Excecution จาก .rpm เป็น .deb
 ```sh
 cd Disk1
 sudo alien --scripts -d oracle-xe-11.2.0-1.0.x86_64.rpm
