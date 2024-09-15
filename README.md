@@ -220,6 +220,49 @@ if [[ ! `tail -n1 $file | grep INIT` ]]; then
 fi update-rc.d oracle-xe defaults 80 01
 ```
 
+### ไฟล์ : /etc/init.d/oracle-xe ###
+ตรวจสอบไฟล์ /etc/init.d/oracle-xe ว่ามีข้อความต่อไปนี้ใต้ ใต้ข้อความ #!/bin/sh ถ้าไม่มีให้ใส่ข้อความต่อไปนี้
+```
+### BEGIN INIT INFO
+# Provides:          oracle-xe
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Start/stop Oracle XE
+# Description:       This script manages the Oracle XE service
+### END INIT INFO
+```
+
+```
+sudo chmod +x /etc/init.d/oracle-xe
+```
+
+```
+sudo update-rc.d oracle-xe defaults
+```
+ 
+แก้ไขไฟล์ /etc/systemd/system/oracle-xe.service
+```
+sudo nano /etc/systemd/system/oracle-xe.service
+```
+```
+[Unit]
+Description=Oracle XE Service
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/init.d/oracle-xe start
+ExecStop=/etc/init.d/oracle-xe stop
+ExecReload=/etc/init.d/oracle-xe reload
+
+[Install]
+WantedBy=multi-user.target
+```
+
+
+
 ### ตั้งค่า Permission ให้กับไฟล์ `/sbin/chkconfig`
 ```sh
 sudo chmod 755 /sbin/chkconfig
@@ -321,9 +364,12 @@ export PATH=$ORACLE_HOME/bin:$PATH
 . ~/.profile
 ```
 
+### 
+
 ### ทำกัน Start Service oracle
 ```sh
-sudo service oracle-xe start
+sudo systemctl enable oracle-xe
+sudo systemctl start oracle-xe
 ```
 
 ### ทำการ Add User ของคุณเข้าใสกลุ่มผู้ดูแลระบบ DBA
