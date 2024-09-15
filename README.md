@@ -217,7 +217,8 @@ if [[ ! `tail -n1 $file | grep INIT` ]]; then
   echo '# Default-Stop: 0 1 6' >> $file
   echo '# Short-Description: Oracle 11g Express Edition' >> $file
   echo '### END INIT INFO' >> $file
-fi update-rc.d oracle-xe defaults 80 01
+fi
+update-rc.d oracle-xe defaults 80 01
 ```
 
 ### ไฟล์ : /etc/init.d/oracle-xe ###
